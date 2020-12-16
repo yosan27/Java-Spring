@@ -4,8 +4,19 @@ public class PersonDto {
 	private Integer id;
 	private String firstName;
 	private String lastName;
+	private String message;
 	
 	
+	public String getMessage() {
+		return message;
+	}
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
 	public Integer getId() {
 		return id;
 	}

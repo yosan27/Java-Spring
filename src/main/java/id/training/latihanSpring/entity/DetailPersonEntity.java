@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +31,18 @@ public class DetailPersonEntity {
 	
 	@Column(name = "jenis_kelamin")
 	private String jenisKelamin;
+	
+	@OneToOne
+	@JoinColumn(name = "person_id")
+	private PersonEntity personEntity;
+
+	public PersonEntity getPersonEntity() {
+		return personEntity;
+	}
+
+	public void setPersonEntity(PersonEntity personEntity) {
+		this.personEntity = personEntity;
+	}
 
 	public Integer getId() {
 		return id;
